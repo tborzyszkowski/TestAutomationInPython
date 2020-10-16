@@ -6,4 +6,4 @@ class Calculator:
         self.state += number
 
     def mult(self, number):
-        pass
+        self.state *= number

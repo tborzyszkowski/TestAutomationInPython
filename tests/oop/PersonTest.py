@@ -4,9 +4,10 @@ from context import oop
 
 
 class PersonTestCase(unittest.TestCase):
+
     def test_person_name_correctly_initialized(self):
         person = oop.Person("John")
-        self.assertEqual(person.name, "John")
+        self.assertEqual("John", person.name)
 
     def test_person_name_correctly_changed(self):
         # Arrange
@@ -14,7 +15,7 @@ class PersonTestCase(unittest.TestCase):
         # Act
         person.rename("Jan")
         # Assert
-        self.assertEqual(person.name, "Jan")
+        self.assertEqual("Jan", person.name)
 
     def test_persons_are_the_same_species(self):
         personAdam = oop.Person("Adam")
