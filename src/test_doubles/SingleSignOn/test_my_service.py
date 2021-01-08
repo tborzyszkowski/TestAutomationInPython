@@ -13,16 +13,17 @@ def confirm_token(correct_token):
     return is_valid
 
 
-def test_single_sign_on_receives_correct_token():
-    mock_sso_registry = Mock(SingleSignOnRegistry)
-    correct_token = SSOToken()
-    mock_sso_registry.is_valid = Mock(side_effect=confirm_token(correct_token))
-    service = MyService(mock_sso_registry)
-    service.handle(Request("Emily"), correct_token)
-    mock_sso_registry.is_valid.assert_called()
 
 
 class MyServiceTest(unittest.TestCase):
+    def test_single_sign_on_receives_correct_token(self):
+        mock_sso_registry = Mock(SingleSignOnRegistry)
+        correct_token = SSOToken()
+        mock_sso_registry.is_valid = Mock(side_effect=confirm_token(correct_token))
+        service = MyService(mock_sso_registry)
+        service.handle(Request("Emily"), correct_token)
+        mock_sso_registry.is_valid.assert_called()
+
     def test_hello_name(self):
         stub_sso_registry = Mock(SingleSignOnRegistry)
         service = MyService(stub_sso_registry)
