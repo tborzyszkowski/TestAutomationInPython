@@ -9,7 +9,7 @@ class Point:
 
     @x.setter
     def x(self, x):
-        self.__x = x if x>=0 else -x
+        self.__x = x if x >= 0 else -x
 
     @property
     def y(self):

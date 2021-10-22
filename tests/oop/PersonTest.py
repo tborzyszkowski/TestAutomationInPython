@@ -18,9 +18,9 @@ class PersonTestCase(unittest.TestCase):
         self.assertEqual("Jan", person.name)
 
     def test_persons_are_the_same_species(self):
-        personAdam = oop.Person("Adam")
-        personEwa = oop.Person("Ewa")
-        self.assertEqual(personAdam.species, personEwa.species)
+        person_adam = oop.Person("Adam")
+        person_ewa = oop.Person("Ewa")
+        self.assertEqual(person_adam.species, person_ewa.species)
 
 
 if __name__ == '__main__':

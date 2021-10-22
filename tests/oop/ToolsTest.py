@@ -8,7 +8,7 @@ class MyTestCase(unittest.TestCase):
         can_cut = knife.capability()["cut"]
         self.assertTrue(can_cut)
 
-    def test_knife_cannnot_sweep(self):
+    def test_knife_cannot_sweep(self):
         knife = oop.Knife()
         can_cut = knife.capability()["sweep"]
         self.assertFalse(can_cut)
