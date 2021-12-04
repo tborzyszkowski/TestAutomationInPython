@@ -13,8 +13,6 @@ def confirm_token(correct_token):
     return is_valid
 
 
-
-
 class MyServiceTest(unittest.TestCase):
     def test_single_sign_on_receives_correct_token(self):
         mock_sso_registry = Mock(SingleSignOnRegistry)
@@ -44,4 +42,11 @@ class MyServiceTest(unittest.TestCase):
         token = SSOToken()
         response = service.handle(Request("Emily"), token)
         spy_sso_registry.is_valid.assert_called_with(token)
+
+    def test_single_sign_on_with_invalid_token_response_text(self):
+        spy_sso_registry = Mock(SingleSignOnRegistry)
+        spy_sso_registry.is_valid.return_value = False
+        service = MyService(spy_sso_registry)
+        token = SSOToken()
+        response = service.handle(Request("Emily"), token)
         assert response.text == "Please sign in"

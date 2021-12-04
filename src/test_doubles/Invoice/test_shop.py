@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import Mock
-from src.test_doubles.Invoice.InvoiceRepository import InvoiceRepository
-from src.test_doubles.Invoice.Shop import Shop
-from src.test_doubles.Invoice.Invoice import Invoice
+from InvoiceRepository import InvoiceRepository
+from Shop import Shop
+from Invoice import Invoice
 
 
 class ShopTests(unittest.TestCase):
