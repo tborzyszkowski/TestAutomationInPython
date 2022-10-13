@@ -1,5 +1,5 @@
 import unittest
-from Koszyk import Koszyk
+from Koszyk import Koszyk, NoProduktInKoszykException, EmptyKoszykException
 from Produkt import Produkt
 
 class MyTestCase(unittest.TestCase):
@@ -19,6 +19,17 @@ class MyTestCase(unittest.TestCase):
         sut = Koszyk([produkt])
         sut.remove(produkt)
         self.assertFalse(produkt in sut.lista_produktow)
+
+    def test_remove_nonexiting_produkt_from_koszyk(self):
+        sut = Koszyk([Produkt()])
+        with self.assertRaises(NoProduktInKoszykException):
+            sut.remove(Produkt())
+
+    def test_remove_produkt_from_empty_koszyk(self):
+        sut = Koszyk()
+        with self.assertRaises(EmptyKoszykException):
+            sut.remove(Produkt())
+
 
 if __name__ == '__main__':
     unittest.main()
