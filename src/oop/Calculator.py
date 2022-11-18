@@ -3,6 +3,7 @@ class Calculator:
         self.state = 0
 
     def add(self, number):
+        # self.state = 1
         self.state += number
 
     def mult(self, number):
