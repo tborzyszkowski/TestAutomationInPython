@@ -8,6 +8,7 @@ class MyService:
 
     def handle(self, request, sso_token):
         if self.sso_registry.is_valid(sso_token):
+        # if True:
             return Response("Hello {0}!".format(request.name))
         else:
             return Response("Please sign in")

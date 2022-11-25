@@ -22,7 +22,7 @@ class AlarmPreasureTests(unittest.TestCase):
     def test_normal_pressure_alarm_stays_off(self):
         stub_sensor = Mock(Sensor)
         stub_sensor.sample_pressure.return_value = 18
-        alarm = Alarm(stub_sensor)
+        alarm = Alarm(sensor=stub_sensor)
         alarm.check()
         self.assertFalse(alarm.is_alarm_on)
 
