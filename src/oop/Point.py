@@ -1,3 +1,6 @@
+import math
+
+
 class Point:
     def __init__(self, x_coordinate = 0, y_coordinate = 0) -> None:
         self.x = x_coordinate
@@ -20,4 +23,8 @@ class Point:
         self.__y = y if y >= 0 else -y
 
     def distance(self, point):
-        return 0
+        dist_x = point.x - self.x
+        dist_y = point.y - self.y
+        dist_x_sqr = dist_x * dist_x
+        dist_y_sqr = dist_y * dist_y
+        return math.sqrt(dist_x_sqr + dist_y_sqr)
