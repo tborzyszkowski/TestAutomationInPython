@@ -26,6 +26,11 @@ class PointTestCase(unittest.TestCase):
         result = point1.distance(point2)
         self.assertEqual(1, result)
 
+    def test_dist_result_1(self):
+        point1 = oop.Point(1, 1)
+        point2 = oop.Point(2, 2)
+        result = point1.distance(point2)
+        self.assertAlmostEquals(1.414213, result, delta=0.0001)
 
 
 if __name__ == '__main__':
