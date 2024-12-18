@@ -25,3 +25,7 @@ def fizzbuzz(n, additional_rules=None):
     if not answer:
         answer = str(n)
     return answer
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

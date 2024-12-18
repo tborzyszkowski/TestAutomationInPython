@@ -1,7 +1,10 @@
+from parameterized import parameterized
+from unittest_parametrize import ParametrizedTestCase
 import unittest
 
 from context import oop
 
+# datasource = [(1, 1, 2), (1, 2, 3)]
 
 class CalculatorTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -29,6 +32,18 @@ class CalculatorTestCase(unittest.TestCase):
         self.calculator.state = 123456
         self.calculator.mult(654321)
         self.assertEqual(80779853376, self.calculator.state)
+
+    # @parameterized.expand(
+    #
+    #     [
+    #         [state, liczba, result]
+    #         for (state, liczba, result) in datasource
+    #     ],
+    # )
+    # def test_subtract_two_times_two_gives_four(self, state, liczba, result):
+    #     self.calculator.state = state
+    #     self.calculator.add(liczba)
+    #     self.assertEqual(result, self.calculator.state)
 
 
 if __name__ == '__main__':

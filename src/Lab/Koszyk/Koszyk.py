@@ -20,3 +20,9 @@ class Koszyk:
                 raise NoProduktInKoszykException()
         else:
             raise EmptyKoszykException()
+
+    def __repr__(self):
+        return "Repr"
+
+    def __str__(self):
+        return "Str"
